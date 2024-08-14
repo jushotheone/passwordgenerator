@@ -1,28 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <title>Best Password Generator</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- JS -->
-    
     <script defer src="script.js"></script>
+
+    <!-- SEO Metadata -->
+    <meta name="description" content="The best and most secure random password generator. Create strong passwords with customizable options and export your password history.">
+    <meta name="keywords" content="password generator, random password, secure password, strong password">
+    <meta name="author" content="Your Name">
+
 </head>
 <body>
     <div class="box">
         <h2>Random Password Generator</h2>
+
+        <!-- Clear Instructions -->
+        <p>Use this tool to create strong, secure passwords. Customize the password length and select the character types you want to include. A stronger password is typically longer and includes a mix of character types.</p>
+
+        <!-- Password Settings -->
+        <div class="settings">
+            <label for="length">Length:</label>
+            <input type="number" id="length" min="8" max="32" value="16">
+            
+            <label for="uppercase">Uppercase Letters:</label>
+            <input type="checkbox" id="uppercase" checked>
+            
+            <label for="lowercase">Lowercase Letters:</label>
+            <input type="checkbox" id="lowercase" checked>
+            
+            <label for="numbers">Numbers:</label>
+            <input type="checkbox" id="numbers" checked>
+            
+            <label for="symbols">Symbols:</label>
+            <input type="checkbox" id="symbols" checked>
+            
+            <label for="pronounceable">Pronounceable:</label>
+            <input type="checkbox" id="pronounceable">
+        </div>
+
+        <!-- Generated Password Display -->
         <div class="password">
-            <input type="text" id="password"  placeholder="Create Password" readonly>
+            <input type="text" id="password" placeholder="Create Password" readonly>
+        </div>
 
-            <table>
-                <th><div id="button" class="btn1" onclick="genPassword()"> Generate</div></th>
-                <th><div id="button" class="btn2" onclick="copyPassword()"> Copy</div></th>
-            </table>
+        <!-- Password Strength Indicator -->
+        <div class="strength-meter">
+            <div class="strength"></div>
+            <span id="strength-text">Strength: </span>
+        </div>
 
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <div class="btn1" onclick="genPassword()" aria-label="Generate Password">Generate</div>
+            <div class="btn2" onclick="copyPassword()" aria-label="Copy Password">Copy</div>
+        </div>
 
+        <!-- Tooltip Feedback -->
+        <div id="copy-tooltip" class="tooltip">Copied!</div>
+
+        <!-- Password History -->
+        <div class="history">
+            <h3>Recently Generated:</h3>
+            <ul id="password-history"></ul>
+            <button onclick="exportHistory()">Export History</button>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <label for="darkModeToggle">Dark Mode:</label>
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        </div>
+
+        <!-- Password Manager Suggestion -->
+        <p class="suggestion">For better password management, consider using a <a href="https://www.lastpass.com/" target="_blank">password manager</a>.</p>
     </div>
 </body>
 </html>
