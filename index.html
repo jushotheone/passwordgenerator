@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Password Generator</title>
+    <title>Password Generator | Secure, Strong, and Random Passwords</title>
 
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- External JS -->
-    <script defer src="script.js"></script> <!-- Ensure this points to the correct path -->
+    <script defer src="script.js"></script>
     
     <!-- Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H68NSY1RD8"></script>
@@ -22,14 +22,25 @@
     </script>
 
     <!-- SEO Metadata -->
-    <meta name="description" content="The best and most secure random password generator. Create strong passwords with customizable options and export your password history.">
-    <meta name="keywords" content="password generator, random password, secure password, strong password">
+    <meta name="description" content="Generate secure, strong, and random passwords online for free. Our password generator is the best tool for creating passwords with customizable options.">
+    <meta name="keywords" content="password generator, random password generator, strong password generator, secure password generator, password generator online, free password generator, password gen, pw generator, random password, suggest strong password">
     <meta name="author" content="Your Name">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "PassWhiz Password Generator",
+      "description": "Generate secure and strong passwords with customizable options.",
+      "url": "https://www.yourdomain.com/password-generator"
+    }
+    </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 flex justify-center items-center min-h-screen">
     <div class="container mx-auto p-5">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center transition-colors duration-300">
-            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Random Password Generator</h2>
+            <h1 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Random Password Generator</h1>
             <p class="mb-6 text-gray-600 dark:text-gray-300">Use this tool to create strong, secure passwords. Customize the password length and select the character types you want to include. A stronger password is typically longer and includes a mix of character types.</p>
 
             <!-- Password Settings -->
@@ -104,6 +115,21 @@
                 <h3 class="text-lg font-medium text-gray-900 dark:text-gray-300">Recently Generated:</h3>
                 <ul id="password-history" class="list-disc list-inside text-gray-900 dark:text-gray-300"></ul>
                 <button onclick="exportHistory()" class="w-full mt-4 py-2 px-4 bg-gray-800 dark:bg-gray-700 text-white rounded-md shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600">Export History</button>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-8">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-gray-300">Frequently Asked Questions</h3>
+                <div class="mt-4 text-left">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">How do I create a strong password?</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">A strong password should be at least 12 characters long, include a mix of letters, numbers, and symbols, and avoid common words or phrases.</p>
+
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">Why should I use a password generator?</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Using a password generator ensures that your passwords are random and secure, making it difficult for hackers to guess them.</p>
+
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">Can I save the passwords generated?</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Yes, you can export your password history and save it securely.</p>
+                </div>
             </div>
 
             <!-- Dark Mode Toggle -->
