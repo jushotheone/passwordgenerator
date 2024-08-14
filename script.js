@@ -1,6 +1,6 @@
 // Generate Password
 function genPassword() {
-    const length = document.getElementById('length').value;
+    const length = document.getElementById('lengthSlider').value;
     const includeUppercase = document.getElementById('uppercase').checked;
     const includeLowercase = document.getElementById('lowercase').checked;
     const includeNumbers = document.getElementById('numbers').checked;
@@ -136,4 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.classList.add('dark');
         document.getElementById('darkModeToggle').checked = true;
     }
+});
+
+// Sync Slider with Value Display
+document.getElementById('lengthSlider').addEventListener('input', function() {
+    document.getElementById('lengthValue').textContent = this.value;
 });

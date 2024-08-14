@@ -17,14 +17,13 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-H68NSY1RD8');
     </script>
 
     <!-- SEO Metadata -->
-    <meta name="description" content="Generate secure, strong, and random passwords online for free. Our password generator is the best tool for creating passwords with customizable options.">
-    <meta name="keywords" content="password generator, random password generator, strong password generator, secure password generator, password generator online, free password generator, password gen, pw generator, random password, suggest strong password">
-    <meta name="author" content="Your Name">
+    <meta name="description" content="Generate secure, strong, and random passwords online for free. Customize password length, character types, and ensure ultimate security.">
+    <meta name="keywords" content="password generator, random password generator, secure password generator, strong password generator, online password generator, free password generator">
+    <meta name="author" content="Lawrence Omolo">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -32,40 +31,40 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "PassWhiz Password Generator",
-      "description": "Generate secure and strong passwords with customizable options.",
-      "url": "https://www.yourdomain.com/password-generator"
+      "description": "Generate secure, strong, and random passwords with customizable options.",
+      "url": "https://passwhiz.netlify.app"
     }
     </script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 flex justify-center items-center min-h-screen">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex justify-center items-center min-h-screen transition-colors duration-300">
     <div class="container mx-auto p-5">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center transition-colors duration-300">
-            <h1 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Random Password Generator</h1>
-            <p class="mb-6 text-gray-600 dark:text-gray-300">Use this tool to create strong, secure passwords. Customize the password length and select the character types you want to include. A stronger password is typically longer and includes a mix of character types.</p>
+            <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">PassWhiz: Random Password Generator</h1>
+            <p class="mb-6 text-gray-600 dark:text-gray-300">Generate strong, secure, and random passwords for ultimate security. Customize password length and character types for your needs.</p>
 
             <!-- Password Settings -->
             <div class="mb-6">
-                <label for="length" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Length:</label>
-                <input type="number" id="length" min="8" max="32" value="16" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 dark:text-gray-300">
+                <label for="lengthSlider" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password Length: <span id="lengthValue">16</span></label>
+                <input type="range" id="lengthSlider" min="8" max="32" value="16" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
             </div>
 
             <div class="mb-6">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Character Types:</label>
                 <div class="mt-2 flex flex-wrap gap-2">
                     <div class="flex items-center">
-                        <input id="uppercase" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                        <input id="uppercase" type="checkbox" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         <label for="uppercase" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Uppercase Letters</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lowercase" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                        <input id="lowercase" type="checkbox" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         <label for="lowercase" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Lowercase Letters</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="numbers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                        <input id="numbers" type="checkbox" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         <label for="numbers" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Numbers</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="symbols" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                        <input id="symbols" type="checkbox" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                         <label for="symbols" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Symbols</label>
                     </div>
                     <div class="flex items-center">
@@ -77,65 +76,54 @@
 
             <!-- Generated Password Display -->
             <div class="mb-6">
-                <input type="text" id="password" placeholder="Create Password" readonly class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 dark:text-gray-300">
+                <input type="text" id="password" placeholder="Generated Password" readonly class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 dark:text-gray-300">
             </div>
 
             <!-- Password Strength Indicator -->
             <div class="mb-6">
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Strength:</label>
-                <div class="strength-meter mt-2 flex items-center">
-                    <div id="strength-bar" class="flex-grow h-2 rounded"></div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password Strength:</label>
+                <div class="strength-meter flex items-center mt-2">
+                    <div id="strength-bar" class="flex-grow h-2 bg-gray-300 dark:bg-gray-600 rounded"></div>
                     <span id="strength-text" class="text-sm text-gray-900 dark:text-gray-300 ml-2">Strength: </span>
                 </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex justify-between gap-4">
-                <button onclick="genPassword()" class="w-full py-2 px-4 bg-gray-800 dark:bg-gray-700 text-white rounded-md shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600">Generate</button>
-                <button onclick="copyPassword()" class="w-full py-2 px-4 bg-gray-800 dark:bg-gray-700 text-white rounded-md shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600">Copy</button>
+                <button onclick="genPassword()" class="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Generate</button>
+                <button onclick="copyPassword()" class="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Copy</button>
             </div>
 
             <!-- Google AdSense Ad -->
             <div class="mt-6">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8468344820063210"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8468344820063210"
-                     data-ad-slot="4982192617"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8468344820063210" crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8468344820063210" data-ad-slot="4982192617" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
             <!-- Password History -->
             <div class="mt-6">
                 <h3 class="text-lg font-medium text-gray-900 dark:text-gray-300">Recently Generated:</h3>
                 <ul id="password-history" class="list-disc list-inside text-gray-900 dark:text-gray-300"></ul>
-                <button onclick="exportHistory()" class="w-full mt-4 py-2 px-4 bg-gray-800 dark:bg-gray-700 text-white rounded-md shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600">Export History</button>
+                <button onclick="exportHistory()" class="w-full mt-4 py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Export History</button>
             </div>
 
             <!-- FAQ Section -->
-            <div class="mt-8">
+            <div class="mt-8 text-left">
                 <h3 class="text-lg font-medium text-gray-900 dark:text-gray-300">Frequently Asked Questions</h3>
-                <div class="mt-4 text-left">
-                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">How do I create a strong password?</h4>
-                    <p class="mt-2 text-gray-600 dark:text-gray-300">A strong password should be at least 12 characters long, include a mix of letters, numbers, and symbols, and avoid common words or phrases.</p>
-
+                <div class="mt-4">
                     <h4 class="font-semibold text-gray-800 dark:text-gray-200">Why should I use a password generator?</h4>
                     <p class="mt-2 text-gray-600 dark:text-gray-300">Using a password generator ensures that your passwords are random and secure, making it difficult for hackers to guess them.</p>
 
                     <h4 class="font-semibold text-gray-800 dark:text-gray-200">Can I save the passwords generated?</h4>
-                    <p class="mt-2 text-gray-600 dark:text-gray-300">Yes, you can export your password history and save it securely.</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Yes, you can export your password history and save it securely. Use the "Export History" button to download your passwords as a CSV file.</p>
                 </div>
             </div>
 
             <!-- Dark Mode Toggle -->
             <div class="mt-6 flex items-center">
                 <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                <label for="darkModeToggle" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Dark Mode</label>
+                <label for="darkModeToggle" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Enable Dark Mode</label>
             </div>
 
             <!-- Password Manager Suggestion -->
