@@ -44,6 +44,12 @@ function generatePronounceablePassword(length) {
     return password;
 }
 
+// Update Password Length Display
+function updateLengthValue() {
+    const lengthValue = document.getElementById('lengthSlider').value;
+    document.getElementById('lengthValue').textContent = lengthValue;
+}
+
 // Copy Password to Clipboard with Tooltip Feedback
 function copyPassword() {
     const copyText = document.getElementById("password");
@@ -79,7 +85,7 @@ function updateStrengthIndicator(password) {
     }
 
     // Update strength bar and text
-    strengthBar.className = `flex-grow h-2 rounded ${strengthColor}`;
+    strengthBar.className = `flex-grow h-2 rounded ${strengthColor} transition-all duration-300`;
     strengthText.textContent = `Strength: ${strength} (Entropy: ${entropy.toFixed(2)} bits)`;
 }
 
@@ -136,9 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.classList.add('dark');
         document.getElementById('darkModeToggle').checked = true;
     }
+
+    // Update password length display on load
+    updateLengthValue();
 });
 
 // Sync Slider with Value Display
-document.getElementById('lengthSlider').addEventListener('input', function() {
-    document.getElementById('lengthValue').textContent = this.value;
-});
+document.getElementById('lengthSlider').addEventListener('input', updateLengthValue);
