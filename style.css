@@ -13,83 +13,51 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Lato', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
 }
 
 /* Container Box Styling */
 .box {
-    background-color: white; /* Light mode background */
+    background-color: white;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.box h2 {
-    margin-bottom: 15px;
-    color: #222;
-    font-size: 28px;
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 700;
+/* Dark Mode Styling */
+.dark-mode {
+    background-color: #1e1e1e; /* Dark mode background */
+    color: #ddd; /* Dark mode text color */
 }
 
-.box p {
-    margin-bottom: 20px;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
+.dark-mode .box {
+    background-color: #292929;
+    color: #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Input Fields */
-input[type="text"], input[type="number"], input[type="checkbox"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 16px;
-    background-color: #f0f0f0; /* Light mode input background */
-    color: #333;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+.dark-mode .form-control {
+    background-color: #3b3b3b;
+    color: #ddd;
+    border-color: #555;
 }
 
-input[type="text"]:placeholder {
-    color: #ccc;
-}
-
-/* Buttons */
-#button, .btn1, .btn2, button {
-    width: 45%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    outline: none;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 16px;
-    text-align: center;
-}
-
-#button:hover, .btn1:hover, .btn2:hover, button:hover {
+.dark-mode .btn-dark {
     background-color: #555;
+    border-color: #555;
 }
 
-/* Flexbox for Buttons */
-.buttons {
-    display: flex;
-    justify-content: space-between;
+.dark-mode .btn-dark:hover {
+    background-color: #777;
+    border-color: #777;
 }
 
-/* Tooltip Feedback */
+/* Custom Tooltip */
 .tooltip {
     visibility: hidden;
     background-color: #555;
@@ -99,7 +67,6 @@ input[type="text"]:placeholder {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    margin-top: 10px;
     font-size: 14px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -127,9 +94,17 @@ input[type="text"]:placeholder {
     transition: width 0.3s ease;
 }
 
+.dark-mode .strength {
+    background-color: #555;
+}
+
 #strength-text {
-    font-size: 14px;
+    font-size: 1rem;
     color: #333;
+}
+
+.dark-mode #strength-text {
+    color: #ddd;
 }
 
 /* Password History Styling */
@@ -139,7 +114,7 @@ input[type="text"]:placeholder {
 }
 
 .history h3 {
-    font-size: 18px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
     color: #333;
 }
@@ -151,65 +126,12 @@ input[type="text"]:placeholder {
 
 .history li {
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 1rem;
     color: #555;
-}
-
-.history button {
-    margin-top: 20px;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.history button:hover {
-    background-color: #555;
-}
-
-/* Dark Mode Styling */
-.dark-mode {
-    background-color: #1e1e1e; /* Dark mode background */
-    color: #ddd; /* Dark mode text color */
-}
-
-.dark-mode .box {
-    background-color: #292929; /* Slightly lighter than background */
-    color: #ddd; /* Dark mode text color */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adjusted shadow for dark mode */
-}
-
-.dark-mode input[type="text"], .dark-mode input[type="number"], .dark-mode input[type="checkbox"] {
-    background-color: #3b3b3b; /* Darker input background */
-    color: #ddd; /* Text color for inputs */
-    border-color: #555;
-}
-
-.dark-mode #button, .dark-mode .btn1, .dark-mode .btn2, .dark-mode button {
-    background-color: #555; /* Dark mode button background */
-    color: #ddd;
-}
-
-.dark-mode #button:hover, .dark-mode .btn1:hover, .dark-mode .btn2:hover, .dark-mode button:hover {
-    background-color: #777;
-}
-
-.dark-mode .strength {
-    background-color: #555; /* Dark mode strength bar */
-}
-
-.dark-mode #strength-text {
-    color: #ddd; /* Dark mode strength text */
 }
 
 .dark-mode .history li {
     color: #ccc;
-}
-
-.dark-mode .tooltip {
-    background-color: #777; /* Tooltip in dark mode */
 }
 
 /* Password Manager Suggestion */
@@ -238,34 +160,9 @@ input[type="text"]:placeholder {
 
 /* Adjusted Header and Instruction Text in Dark Mode */
 .dark-mode .box h2 {
-    color: #eee; /* Lighter header text */
+    color: #eee;
 }
 
 .dark-mode .box p {
-    color: #ccc; /* Lighter instruction text */
-}
-
-/* Button Hover Effect */
-.dark-mode #button:hover, .dark-mode .btn1:hover, .dark-mode .btn2:hover, .dark-mode button:hover {
-    background-color: #888; /* Slightly lighter on hover */
-}
-
-/* Input Field Border */
-.dark-mode input[type="text"], .dark-mode input[type="number"], .dark-mode input[type="checkbox"] {
-    border-color: #666; /* Slightly lighter border */
-}
-
-/* Password Strength Text */
-.dark-mode #strength-text {
-    color: #ccc; /* Slightly lighter text for better visibility */
-}
-
-/* Recently Generated Passwords */
-.dark-mode .history li {
-    color: #bbb; /* Lighter text for better contrast */
-}
-
-/* Tooltip Adjustment */
-.dark-mode .tooltip {
-    background-color: #666; /* Ensure tooltip stands out */
+    color: #ccc;
 }

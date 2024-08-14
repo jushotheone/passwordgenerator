@@ -1,4 +1,4 @@
-// Generate Password (continued)
+// Generate Password
 function genPassword() {
     const length = document.getElementById('length').value;
     const includeUppercase = document.getElementById('uppercase').checked;
@@ -45,7 +45,7 @@ function generatePronounceablePassword(length) {
 }
 
 // Copy Password to Clipboard with Tooltip Feedback
-function copyPassword(){
+function copyPassword() {
     const copyText = document.getElementById("password");
     copyText.select();
     copyText.setSelectionRange(0, 9999); // For mobile devices
@@ -63,16 +63,23 @@ function copyPassword(){
 
 // Update Password Strength Indicator
 function updateStrengthIndicator(password) {
+    const strengthBar = document.getElementById('strength-bar');
     const strengthText = document.getElementById('strength-text');
     const entropy = calculateEntropy(password);
+
     let strength = "Weak";
+    let strengthColor = "bg-red-500";
 
     if (entropy > 50) {
         strength = "Strong";
+        strengthColor = "bg-green-500";
     } else if (entropy > 30) {
         strength = "Medium";
+        strengthColor = "bg-yellow-500";
     }
 
+    // Update strength bar and text
+    strengthBar.className = `flex-grow h-2 rounded ${strengthColor}`;
     strengthText.textContent = `Strength: ${strength} (Entropy: ${entropy.toFixed(2)} bits)`;
 }
 
@@ -110,9 +117,4 @@ function exportHistory() {
     link.setAttribute("download", "password_history.csv");
     document.body.appendChild(link);
     link.click();
-}
-
-// Toggle Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
 }
