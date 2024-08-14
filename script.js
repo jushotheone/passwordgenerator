@@ -118,3 +118,22 @@ function exportHistory() {
     document.body.appendChild(link);
     link.click();
 }
+
+// Toggle Dark Mode
+function toggleDarkMode() {
+    const htmlElement = document.documentElement;
+    htmlElement.classList.toggle("dark");
+
+    // Save user preference in localStorage
+    const isDarkMode = htmlElement.classList.contains('dark');
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Apply the user's theme preference when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    if (darkMode) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('darkModeToggle').checked = true;
+    }
+});

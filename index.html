@@ -8,7 +8,10 @@
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- Google Analytics -->
+    <!-- External JS -->
+    <script defer src="script.js"></script> <!-- Ensure this points to the correct path -->
+    
+    <!-- Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H68NSY1RD8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,12 +21,6 @@
       gtag('config', 'G-H68NSY1RD8');
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8468344820063210" crossorigin="anonymous"></script>
-
-    <!-- External JS -->
-    <script defer src="script.js"></script> <!-- Ensure this points to the correct path -->
-    
     <!-- SEO Metadata -->
     <meta name="description" content="The best and most secure random password generator. Create strong passwords with customizable options and export your password history.">
     <meta name="keywords" content="password generator, random password, secure password, strong password">
@@ -87,8 +84,20 @@
                 <button onclick="copyPassword()" class="w-full py-2 px-4 bg-gray-800 dark:bg-gray-700 text-white rounded-md shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600">Copy</button>
             </div>
 
-            <!-- Tooltip Feedback -->
-            <div id="copy-tooltip" class="tooltip text-center mt-2 text-sm text-gray-500 dark:text-gray-400">Copied!</div>
+            <!-- Google AdSense Ad -->
+            <div class="mt-6">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8468344820063210"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8468344820063210"
+                     data-ad-slot="4982192617"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
 
             <!-- Password History -->
             <div class="mt-6">
