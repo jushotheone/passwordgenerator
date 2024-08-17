@@ -1,0 +1,98 @@
+/* 1. Subtle Shadows & Layering */
+.glass-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(255, 255, 255, 0.15) inset;
+}
+
+/* 2. Animated Gradient Background */
+body {
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    background-size: 200% 200%;
+    animation: gradientAnimation 6s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 4. Enhanced Button Hover Animations */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* Button border hover effects */
+.btn {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.btn:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 5. Text Shadows for Enhanced Visibility */
+.text-shadow {
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 6. Circular Animation on Buttons */
+.btn::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn:hover::before {
+    transform: scale(3);
+}
+
+/* 7. Glowing Input Fields on Focus */
+input:focus {
+    border-color: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    transition: border-color 0.3s, box-shadow 0.3s ease;
+}
+
+/* 9. Fading Section Transitions */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 10. Subtle Background Patterns */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+    opacity: 0.2;
+    pointer-events: none;
+}

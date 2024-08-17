@@ -1,5 +1,5 @@
 // Generate Password
-function genPassword() {
+function genPassword(updatePassword = true) {
     const length = document.getElementById('lengthSlider').value;
     const includeUppercase = document.getElementById('uppercase').checked;
     const includeLowercase = document.getElementById('lowercase').checked;
@@ -10,17 +10,22 @@ function genPassword() {
     let charset = "";
     let password = "";
 
-    if (pronounceable) {
-        password = generatePronounceablePassword(length);
+    // If updating the existing password length, not generating a new one
+    if (!updatePassword) {
+        password = document.getElementById('password').value.slice(0, length);
     } else {
-        if (includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        if (includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
-        if (includeNumbers) charset += "0123456789";
-        if (includeSymbols) charset += "!@#$%^&*()_+";
+        if (pronounceable) {
+            password = generatePronounceablePassword(length);
+        } else {
+            if (includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
+            if (includeNumbers) charset += "0123456789";
+            if (includeSymbols) charset += "!@#$%^&*()_+";
 
-        for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            password += charset[randomIndex];
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
         }
     }
 
@@ -44,10 +49,13 @@ function generatePronounceablePassword(length) {
     return password;
 }
 
-// Update Password Length Display
+// Update Password Length Display and Adjust Password
 function updateLengthValue() {
     const lengthValue = document.getElementById('lengthSlider').value;
     document.getElementById('lengthValue').textContent = lengthValue;
+
+    // Adjust password length dynamically without generating a new one
+    genPassword(false);
 }
 
 // Copy Password to Clipboard with Tooltip Feedback
@@ -147,5 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLengthValue();
 });
 
-// Sync Slider with Value Display
+// Sync Slider with Value Display and Adjust Password Length
 document.getElementById('lengthSlider').addEventListener('input', updateLengthValue);
